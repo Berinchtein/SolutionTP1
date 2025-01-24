@@ -12,6 +12,12 @@ int main() {
 	cout << "Entrez un nombre entier: ";
 	cin >> input_nombre;
 
+	// Vérification si le nombre est -1, 0 ou 1
+	if (input_nombre == -1 || input_nombre == 0 || input_nombre == 1) {
+		cout << "Ce nombre n'est pas premier car -1, 0 et 1 ne sont pas des nombres premiers.";
+		return 0;
+	}
+
 	// Vérification de si le nombre est divisible par 2
 	if (input_nombre != 2 && input_nombre % 2 == 0) {
 		cout << "Ce nombre n'est pas premier car il est divisible par 2.";
