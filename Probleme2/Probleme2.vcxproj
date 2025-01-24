@@ -130,6 +130,9 @@
     <ClCompile Include="..\Probleme1\fonctions.cpp" />
     <ClCompile Include="exo2.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="fonctions.hpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -1,5 +1,6 @@
 
 #include <iostream>
+#include "fonctions.hpp"
 
 using namespace std;
 
@@ -18,7 +19,8 @@ int main() {
 	do {
 		cout << "\nEntrez la somme d'argent qui a ete pretee: ";
 		cin >> loan_amount;
-		if (loan_amount < 0) {
+		if (between_2_floats(loan_amount, 0)) {
+		//if (loan_amount < 0) {
 			cout << "La somme d'argent entree n'est pas positive. Veuillez recommencer.";
 		}
 	} while (loan_amount < 0);
