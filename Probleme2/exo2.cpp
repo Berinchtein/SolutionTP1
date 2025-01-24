@@ -10,7 +10,8 @@ int main() {
 	float monthly_payment;
 	float annual_rate;
 	float monthly_rate;
-	float interest_amount = 0;
+	float total_interest_amount = 0;
+	float temp_interest_amount = 0;
 	unsigned nb_months = 0;
 
 	// Entrée de la somme d'argent et vérification de sa validité
@@ -44,21 +45,22 @@ int main() {
 	monthly_rate = annual_rate / 12;
 
 	while (loan_amount > 0) {
+		temp_interest_amount = 0;
+		temp_interest_amount = loan_amount * (monthly_rate / 100.0);
+		loan_amount += temp_interest_amount;
+		total_interest_amount += temp_interest_amount;
 		if (loan_amount - monthly_payment >= 0) {
 			loan_amount -= monthly_payment;
-			loan_amount *= (1 + (monthly_rate / 100.0));
-			interest_amount += loan_amount * (monthly_rate / 100.0);
 		}
 		else {
 			loan_amount = 0;
 		}
-		//cout << loan_amount << endl;
-		nb_months += 1;
+		nb_months++;
 	}
 
 	cout << "Nombre de mois: " << nb_months << endl;
 
-	cout << "Somme percue par le preteur: " << interest_amount << endl;
+	cout << "Somme percue par le preteur: " << total_interest_amount << endl;
 
 	return 0;
 }
