@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string> 
+#include <fstream> 
+
+int main() {
+    std::ifstream fichier('dictionnaire.txt');
+    std::string motLepluslong, natureLepluslong, definitionLepluslong;
+    std::string ligne;  
+
+    while (std::getline(fichier, ligne)) {
+        size_t tab1 = ligne.find('\t'); 
+        size_t tab2 = ligne.find('\t', tab1 + 1); 
+
+        std::string mot = ligne.substr(0, tab1);
+        std::string nature = ligne.substr(tab1 + 1, tab2);
+        std::string definition = ligne.substr(tab2 + 1);
+
+        if (mot.length() > motLepluslong.length()) {
+            motLepluslong = mot;
+            natureLepluslong = nature;
+            definitionLepluslong = definition;
+        }
+    }
+    std::cout << motLepluslong << '(' << natureLepluslong << ') : ' << definitionLepluslong << std::endl;
+
+     
