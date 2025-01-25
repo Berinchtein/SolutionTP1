@@ -34,5 +34,6 @@ int main() {
 
 	// Si le programme n'a détecté aucun diviseur au nombre, il le déclare premier
 	cout << "Ce nombre est premier.";
+
 	return 0;
 }

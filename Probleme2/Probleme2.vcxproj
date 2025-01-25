@@ -127,8 +127,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Probleme1\fonctions.cpp" />
     <ClCompile Include="exo2.cpp" />
+    <ClCompile Include="fonctions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fonctions.hpp" />

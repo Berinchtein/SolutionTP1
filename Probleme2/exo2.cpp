@@ -19,31 +19,30 @@ int main() {
 	do {
 		cout << "\nEntrez la somme d'argent qui a ete pretee: ";
 		cin >> loan_amount;
-		if (between_2_floats(loan_amount, 0)) {
-		//if (loan_amount < 0) {
+		if (!between_2_floats(loan_amount, 0)) {
 			cout << "La somme d'argent entree n'est pas positive. Veuillez recommencer.";
 		}
-	} while (loan_amount < 0);
+	} while (!between_2_floats(loan_amount, 0));
 
 	// Entrée du montant remboursé chaque mois et vérification de sa validité
 	do {
 		cout << "\nEntrez le montant rembourse chaque mois: ";
 		cin >> monthly_payment;
-		if (monthly_payment < 0) {
+		if (!between_2_floats(monthly_payment, 0)) {
 			cout << "Le montant rembourse chaque mois entre n'est pas positif. Veuillez recommencer.";
 		}
-	} while (monthly_payment < 0);
+	} while (!between_2_floats(monthly_payment, 0));
 
 	// Entrée du taux d'intérêt annuel et vérification de sa validité
 	do {
 		cout << "\nEntrez le taux d'interet annuel: ";
 		cin >> annual_rate;
-		if (annual_rate < 0 || annual_rate > 100) {
+		if (!between_2_floats(annual_rate, 0, 100)) {
 			cout << "Le taux d'interet annuel entre n'est situe entre 0 et 100 %. Veuillez recommencer.";
 		}
-	} while (annual_rate < 0 || annual_rate > 100);
+	} while (!between_2_floats(annual_rate, 0, 100));
 
-	//Calcul du nombre de mois requis pour payer le prêt et du montant amassé par le prêteur
+	// Calcul du nombre de mois requis pour payer le prêt et du montant amassé par le prêteur
 	monthly_rate = annual_rate / 12;
 
 	while (loan_amount > 0) {
@@ -60,8 +59,8 @@ int main() {
 		nb_months++;
 	}
 
+	// Affichage du nombre de mois requis pour payer le prêt et du montant amassé par le prêteur
 	cout << "Nombre de mois: " << nb_months << endl;
-
 	cout << "Somme percue par le preteur: " << total_interest_amount << endl;
 
 	return 0;

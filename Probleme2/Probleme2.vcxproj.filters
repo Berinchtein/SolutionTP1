@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Probleme1\fonctions.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
     <ClCompile Include="exo2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonctions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
