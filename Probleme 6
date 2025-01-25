@@ -28,13 +28,13 @@ int main() {
             indicePlusGrandNbrCara=j;
         }
     }
-    int firstSplit = mots[indicePlusGrandNbrCar].nature.find(' ');
-    int secondSplit= mots[indicePlusGrandNbrCar].nature.find(' ', firstSplit+1);
+    int firstSplit = mots[indicePlusGrandNbrCara].nature.find(' ');
+    int secondSplit= mots[indicePlusGrandNbrCara].nature.find(' ', firstSplit+1);
 
-    cout << mots[indicePlusGrandNbrCar].nom << ' ('
-        << mots[indicePlusGrandNbrCar].nature.substr(0, secondSplit)<< '/'
-        << mots[indicePlusGrandNbrCar].nature.substr(secondSplit +1) << ') : '
-        << mots[indicePlusGrandNbrCar].definition;
+    cout << mots[indicePlusGrandNbrCara].nom << ' ('
+        << mots[indicePlusGrandNbrCara].nature.substr(0, secondSplit)<< '/'
+        << mots[indicePlusGrandNbrCara].nature.substr(secondSplit +1) << ') : '
+        << mots[indicePlusGrandNbrCara].definition;
     return 0;
 }
 
