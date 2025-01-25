@@ -1,26 +1,41 @@
 #include <iostream>
 #include <string> 
 #include <fstream> 
+using namespace std::
+struct Mot{
+    string nom, nature, definition;
+};
 
 int main() {
-    std::ifstream fichier('dictionnaire.txt');
-    std::string motLepluslong, natureLepluslong, definitionLepluslong;
-    std::string ligne;  
+    ifstream fichier('dictionnaire.txt');
+    int plusGrandNbrCara=0, indicePlusGrandNbrCara=0;
+    Mot mots[4];
+    string ligne;  
 
-    while (std::getline(fichier, ligne)) {
-        size_t tab1 = ligne.find('\t'); 
-        size_t tab2 = ligne.find('\t', tab1 + 1); 
+    while (getline(fichier, ligne)) {
+        posNom = ligne.find('\t'); 
+        posNature = ligne.find('\t', posNom + 1); 
 
-        std::string mot = ligne.substr(0, tab1);
-        std::string nature = ligne.substr(tab1 + 1, tab2);
-        std::string definition = ligne.substr(tab2 + 1);
+        mots[i].nom = ligne.substr(0, posNom);
+        mots[i].nature = ligne.substr(posNom + 1, posNature - posNom -1);
+        mots[i].definition = ligne.substr(posNature + 1);
+        i++;
+    ;
+    for (int j=0; j<i; j++) {
 
-        if (mot.length() > motLepluslong.length()) {
-            motLepluslong = mot;
-            natureLepluslong = nature;
-            definitionLepluslong = definition;
+        if (size(mot[j].nom > plusGrandNbr) {
+            plusGrandNbrCara = size(mots[j].nom);
+            indicePlusGrandNbrCara=j;
         }
     }
-    std::cout << motLepluslong << '(' << natureLepluslong << ') : ' << definitionLepluslong << std::endl;
+    int firstSplit = mots[indicePlusGrandNbrCar].nature.find(' ');
+    int secondSplit= mots[indicePlusGrandNbrCar].nature.find(' ', firstSplit+1);
+
+    cout << mots[indicePlusGrandNbrCar].nom << ' ('
+        << mots[indicePlusGrandNbrCar].nature.substr(0, secondSplit)<< '/'
+        << mots[indicePlusGrandNbrCar].nature.substr(secondSplit +1) << ') : '
+        << mots[indicePlusGrandNbrCar].definition;
+    return 0;
+}
 
      
