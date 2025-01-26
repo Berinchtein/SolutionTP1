@@ -23,8 +23,8 @@ int main() {
         y = unif(re);
         if (sqrt(pow(x, 2) + pow(y, 2)) < 1) numberOfPoints++;
     }
-    piEstime = (static_cast<double>(numberOfPoints) / precision) * 4;
-    cout << "La valeur de pi estimee est : " << piEstime << endl;
+    piEstimated = (static_cast<double>(numberOfPoints) / precision) * 4;
+    cout << "La valeur de pi estimee est : " << piEstimated << endl;
 
     return 0;
 
