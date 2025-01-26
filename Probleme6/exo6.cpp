@@ -21,9 +21,9 @@ int main() {
 		size_t posName = ligne.find('\t');
 		size_t posNature = ligne.find('\t', posName + 1);
 
-		mots[i].name = ligne.substr(0, posName);
-		mots[i].nature = ligne.substr(posName + 1, posNature - posName - 1);
-		mots[i].definition = ligne.substr(posNature + 1);
+		words[i].name = ligne.substr(0, posName);
+		words[i].nature = ligne.substr(posName + 1, posNature - posName - 1);
+		words[i].definition = ligne.substr(posNature + 1);
 		i++;
 		;
 		for (int j = 0; j < i; j++) {
@@ -33,13 +33,13 @@ int main() {
 				largestIndex = j;
 			}
 		}
-		int firstSplit = mots[largestIndex].nature.find(' ');
-		int secondSplit = mots[largestIndex].nature.find(' ', firstSplit + 1);
+		int firstSplit = words[largestIndex].nature.find(' ');
+		int secondSplit = words[largestIndex].nature.find(' ', firstSplit + 1);
 
-		cout << mots[largestIndex].name << ' ('
-			<< mots[largestIndex].nature.substr(0, secondSplit) << '/'
-			<< mots[largestIndex].nature.substr(secondSplit + 1) << ') : '
-			<< mots[largestIndex].definition;
+		cout << words[largestIndex].name << ' ('
+			<< words[largestIndex].nature.substr(0, secondSplit) << '/'
+			<< words[largestIndex].nature.substr(secondSplit + 1) << ') : '
+			<< words[largestIndex].definition;
 		return 0;
 	}
 }
