@@ -1,6 +1,12 @@
+/*
+ * Nom: À REMPLIR
+ * Description: À REMPLIR
+ * Auteurs: À REMPLIR
+ */
+
+#include "functions.hpp"
 
 #include <iostream>
-#include "functions.hpp"
 
 using namespace std;
 

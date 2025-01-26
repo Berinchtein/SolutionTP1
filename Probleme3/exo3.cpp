@@ -1,6 +1,12 @@
+/*
+ * Nom: À REMPLIR
+ * Description: À REMPLIR
+ * Auteurs: À REMPLIR
+ */
+
+#include "../Probleme2/functions.hpp"
 
 #include <iostream>
-#include "../Probleme2/functions.hpp"
 
 using namespace std;
 

@@ -1,7 +1,7 @@
 /*
- * Nom: Probleme 1 TP2
- * Description: Fichier principal du probleme #1 pour le TP2
- * Auteurs: Massylia Aggoun et Manuel Jarry
+ * Nom: À REMPLIR
+ * Description: À REMPLIR
+ * Auteurs: À REMPLIR
  */
 
 #include <iostream>

@@ -1,7 +1,15 @@
+/*
+ * Nom: À REMPLIR
+ * Description: À REMPLIR
+ * Auteurs: À REMPLIR
+ */
+
 #include <iostream>
 #include <string> 
 #include <fstream> 
+
 using namespace std;
+
 struct Word {
 	string name, nature, definition;
 };

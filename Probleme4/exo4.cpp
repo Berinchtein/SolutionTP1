@@ -1,6 +1,13 @@
+/*
+ * Nom: À REMPLIR
+ * Description: À REMPLIR
+ * Auteurs: À REMPLIR
+ */
+
 #include <iostream>
 #include <random>
 #include <cmath>
+
 using namespace std;
 
 int main() {
