@@ -2,24 +2,27 @@
 #include <random>
 #include <cmath>
 using namespace std;
+
 int main() {
     double lower_bound = -1; 
     double upper_bound = 1;
-    std::uniform_real_distribution<double> unif(lower_bound, upper_bound);
-    std::default_random_engine re;
+    uniform_real_distribution<double> unif(lower_bound, upper_bound);
+    default_random_engine re;
 
     int precision;
     int nombrePointDansCercle = 0;
     double x, y;
     double piEstime;
 
-    cout << 'Combien de points voulez vous generer'; cin >> precision;
+    cout << 'Combien de points voulez vous generer';
+    cin >> precision;
+
     for (int = 0; i < precision; i++) {
         x = unif(re);
         y = unif(re);
-        if (sqrt(pow(x, 2) + pow(y, 2)) < 1) nombrePointsDansCercle++;
+        if (sqrt(pow(x, 2) + pow(y, 2)) < 1) nombrePointDansCercle++;
     } 
-    piEstime = (double(nombrePointsDansCercle) / precision) * 4; 
-    cout << 'La valeur de pi estimee est:' << piEstime;
+    piEstime = (static_cast<double>(nombrePointDansCercle) / precision) * 4; 
+    cout << 'La valeur de pi estimee est:' << piEstime << endl;
 
     return 0 
