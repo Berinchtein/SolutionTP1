@@ -17,7 +17,7 @@ int main() {
 	}
 	cout << " " << initial_array[array_length - 1] << " }" << endl;
 
-	//Non-optimisé
+	// Unoptimized loops
 	for (iterator_1 = 0; iterator_1 < array_length; iterator_1++) {
 		if (initial_array[iterator_1] % 2 == 0) {
 			arranged_array[iterator_2] = initial_array[iterator_1];
