@@ -29,12 +29,12 @@ int main() {
 		for (int j = 0; j < i; j++) {
 
 			if (words[j].name.size() > largestNumberOfCar) {
-				plusGrandNbrCara = words[j].nom.size();
-				indicePlusGrandNbrCara = j;
+				largestNumberOfCar = words[j].nom.size();
+				largestIndex = j;
 			}
 		}
-		int firstSplit = mots[indicePlusGrandNbrCara].nature.find(' ');
-		int secondSplit = mots[indicePlusGrandNbrCara].nature.find(' ', firstSplit + 1);
+		int firstSplit = mots[largestIndex].nature.find(' ');
+		int secondSplit = mots[largestIndex].nature.find(' ', firstSplit + 1);
 
 		cout << mots[largestIndex].name << ' ('
 			<< mots[largestIndex].nature.substr(0, secondSplit) << '/'
