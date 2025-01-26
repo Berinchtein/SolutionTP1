@@ -60,8 +60,8 @@ int main() {
 	}
 
 	// Affichage du nombre de mois requis pour payer le prêt et du montant amassé par le prêteur
-	cout << "Nombre de mois: " << nb_months << endl;
-	cout << "Somme percue par le preteur: " << total_interest_amount << endl;
+	cout << "\nNombre de mois: " << nb_months << endl;
+	cout << "\nSomme percue par le preteur: " << total_interest_amount << endl;
 
 	return 0;
 }

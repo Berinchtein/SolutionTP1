@@ -8,8 +8,14 @@ int main() {
 
 	// Déclaration des variables
 	double initial_height;
+	double pre_bounce_height;
+	double post_bounce_height;
+	double pre_bounce_speed;
+	double post_bounce_speed;
 	double nb_bounces;
 	double bounce_coefficient;
+	int bounce_iterator;
+	const double g = 9.81;
 
 	// Entrée de la hauteur initiale de la balle et vérification de sa validité
 	do {
@@ -37,6 +43,13 @@ int main() {
 			cout << "Le coefficient de rebond entre n'est situe entre 0 et 1. Veuillez recommencer.";
 		}
 	} while (!between_2_doubles(bounce_coefficient, 0, 1));
+
+	// Calcul 
+	pre_bounce_height = initial_height;
+	for (bounce_iterator = 1; bounce_iterator <= nb_bounces; bounce_iterator++) {
+		pre_bounce_speed = sqrt(2.0 * g * pre_bounce_height);
+		cout << "Hauteur de la balle au rebond #" << bounce_iterator << ": ";
+	}
 
 	return 0;
 }
