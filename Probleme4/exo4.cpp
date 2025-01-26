@@ -11,9 +11,9 @@ int main() {
     default_random_engine re;
 
     int precision;
-    int nombrePointDansCercle = 0;
+    int numberOfPoints = 0;
     double x, y;
-    double piEstime;
+    double piEstimated;
 
     cout << "Combien de points voulez vous generer";
     cin >> precision;
@@ -21,9 +21,9 @@ int main() {
     for (int i = 0; i < precision; i++) {
         x = unif(re);
         y = unif(re);
-        if (sqrt(pow(x, 2) + pow(y, 2)) < 1) nombrePointDansCercle++;
+        if (sqrt(pow(x, 2) + pow(y, 2)) < 1) numberOfPoints++;
     }
-    piEstime = (static_cast<double>(nombrePointDansCercle) / precision) * 4;
+    piEstime = (static_cast<double>(numberOfPoints) / precision) * 4;
     cout << "La valeur de pi estimee est : " << piEstime << endl;
 
     return 0;
