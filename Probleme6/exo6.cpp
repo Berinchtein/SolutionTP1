@@ -23,7 +23,7 @@ int main() {
     ;
     for (int j=0; j<i; j++) {
 
-        if (size(mots[j].nom > plusGrandNbr) {
+        if (size(mots[j].nom) > plusGrandNbr) {
             plusGrandNbrCara = size(mots[j].nom);
             indicePlusGrandNbrCara=j;
         }
