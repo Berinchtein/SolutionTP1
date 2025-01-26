@@ -8,23 +8,28 @@ struct Mot{
 
 int main() {
     ifstream fichier("dictionnaire.txt");
+    if (!fichier.is_open()) {
+        cerr << "Erreur: Impossible d'ouvrir le fichier dictionnaire.txt" << endl;
+        return 1;
+    } 
     int plusGrandNbrCara=0, indicePlusGrandNbrCara=0;
     Mot mots[4];
-    string ligne;  
+    string ligne;
+    int i=0; 
 
     while (getline(fichier, ligne)) {
-        posNom = ligne.find('\t'); 
-        posNature = ligne.find('\t', posNom + 1); 
+        size_t posNom = ligne.find('\t'); 
+        size_t posNature = ligne.find('\t', posNom + 1); 
 
         mots[i].nom = ligne.substr(0, posNom);
-        mots[i].nature = ligne.substr(posNom + 1, posNature - posNom -1);
+        mots[i].nature = ligne.substr(posNom + 1, posNature - posNom - 1);
         mots[i].definition = ligne.substr(posNature + 1);
         i++;
     ;
     for (int j=0; j<i; j++) {
 
-        if (size(mots[j].nom) > plusGrandNbr) {
-            plusGrandNbrCara = size(mots[j].nom);
+        if (mots[j].nom.size() > plusGrandNbrCara) {
+            plusGrandNbrCara = mots[j].nom.size();
             indicePlusGrandNbrCara=j;
         }
     }
