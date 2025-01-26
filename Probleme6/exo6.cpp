@@ -1,13 +1,13 @@
 #include <iostream>
 #include <string> 
 #include <fstream> 
-using namespace std::
+using namespace std;
 struct Mot{
     string nom, nature, definition;
 };
 
 int main() {
-    ifstream fichier('dictionnaire.txt');
+    ifstream fichier("dictionnaire.txt");
     int plusGrandNbrCara=0, indicePlusGrandNbrCara=0;
     Mot mots[4];
     string ligne;  
@@ -23,7 +23,7 @@ int main() {
     ;
     for (int j=0; j<i; j++) {
 
-        if (size(mot[j].nom > plusGrandNbr) {
+        if (size(mots[j].nom > plusGrandNbr) {
             plusGrandNbrCara = size(mots[j].nom);
             indicePlusGrandNbrCara=j;
         }
