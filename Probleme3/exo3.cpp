@@ -44,11 +44,20 @@ int main() {
 		}
 	} while (!between_2_doubles(bounce_coefficient, 0, 1));
 
-	// Calcul 
-	pre_bounce_height = initial_height;
+	// Calcul des relations entre variables et affichage de la hauteur à chaque rebond
 	for (bounce_iterator = 1; bounce_iterator <= nb_bounces; bounce_iterator++) {
+		if (bounce_iterator == 1) {
+			pre_bounce_height = initial_height;
+		}
+		else {
+			pre_bounce_height = post_bounce_height;
+		}
 		pre_bounce_speed = sqrt(2.0 * g * pre_bounce_height);
-		cout << "Hauteur de la balle au rebond #" << bounce_iterator << ": ";
+		post_bounce_speed = bounce_coefficient * pre_bounce_speed;
+		post_bounce_height = (post_bounce_speed * post_bounce_speed) / (2.0 * g);
+		if (bounce_iterator == nb_bounces) {
+			cout << "\nHauteur de la balle apres le rebond #" << bounce_iterator << ": " << (round(post_bounce_height * 10000.0)) / 10000.0 << " m" << endl;
+		}
 	}
 
 	return 0;
