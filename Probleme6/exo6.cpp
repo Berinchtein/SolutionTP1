@@ -18,18 +18,18 @@ int main() {
 	int i = 0;
 
 	while (getline(fichier, line)) {
-		size_t posName = ligne.find('\t');
-		size_t posNature = ligne.find('\t', posName + 1);
+		size_t posName = line.find('\t');
+		size_t posNature = line.find('\t', posName + 1);
 
-		words[i].name = ligne.substr(0, posName);
-		words[i].nature = ligne.substr(posName + 1, posNature - posName - 1);
-		words[i].definition = ligne.substr(posNature + 1);
+		words[i].name = line.substr(0, posName);
+		words[i].nature = line.substr(posName + 1, posNature - posName - 1);
+		words[i].definition = line.substr(posNature + 1);
 		i++;
 		;
 		for (int j = 0; j < i; j++) {
 
 			if (words[j].name.size() > largestNumberOfCar) {
-				largestNumberOfCar = words[j].nom.size();
+				largestNumberOfCar = words[j].name.size();
 				largestIndex = j;
 			}
 		}
@@ -43,5 +43,4 @@ int main() {
 		return 0;
 	}
 }
-
 
