@@ -1,6 +1,6 @@
 
 #include <iostream>
-#include "../Probleme2/fonctions.hpp"
+#include "../Probleme2/functions.hpp"
 
 using namespace std;
 

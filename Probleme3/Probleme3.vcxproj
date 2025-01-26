@@ -127,11 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Probleme2\fonctions.cpp" />
+    <ClCompile Include="..\Probleme2\functions.cpp" />
     <ClCompile Include="exo3.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Probleme2\fonctions.hpp" />
+    <ClInclude Include="..\Probleme2\functions.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

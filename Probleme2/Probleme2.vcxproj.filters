@@ -18,12 +18,12 @@
     <ClCompile Include="exo2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="fonctions.cpp">
+    <ClCompile Include="functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="fonctions.hpp">
+    <ClInclude Include="functions.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

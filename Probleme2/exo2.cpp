@@ -1,6 +1,6 @@
 
 #include <iostream>
-#include "fonctions.hpp"
+#include "functions.hpp"
 
 using namespace std;
 
