@@ -17,26 +17,26 @@ int main() {
 	do {
 		cout << "\nEntrez la somme d'argent qui a ete pretee: ";
 		cin >> loanAmount;
-		if (!between_2_doubles(loanAmount, 0)) {
+		if (!isBetween2Doubles(loanAmount, 0)) {
 			cout << "La somme d'argent entree n'est pas positive. Veuillez recommencer.";
 		}
-	} while (!between_2_doubles(loanAmount, 0));
+	} while (!isBetween2Doubles(loanAmount, 0));
 
 	do {
 		cout << "\nEntrez le montant rembourse chaque mois: ";
 		cin >> monthlyPayment;
-		if (!between_2_doubles(monthlyPayment, 0)) {
+		if (!isBetween2Doubles(monthlyPayment, 0)) {
 			cout << "Le montant rembourse chaque mois entre n'est pas positif. Veuillez recommencer.";
 		}
-	} while (!between_2_doubles(monthlyPayment, 0));
+	} while (!isBetween2Doubles(monthlyPayment, 0));
 
 	do {
 		cout << "\nEntrez le taux d'interet annuel: ";
 		cin >> annualRate;
-		if (!between_2_doubles(annualRate, 0, 100)) {
+		if (!isBetween2Doubles(annualRate, 0, 100)) {
 			cout << "Le taux d'interet annuel entre n'est situe entre 0 et 100 %. Veuillez recommencer.";
 		}
-	} while (!between_2_doubles(annualRate, 0, 100));
+	} while (!isBetween2Doubles(annualRate, 0, 100));
 
 	monthlyRate = annualRate / 12;
 

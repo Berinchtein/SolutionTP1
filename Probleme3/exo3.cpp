@@ -19,26 +19,26 @@ int main() {
 	do {
 		cout << "\nEntrez la hauteur initiale de la balle (m): ";
 		cin >> initialHeight;
-		if (!between_2_doubles(initialHeight, 0)) {
+		if (!isBetween2Doubles(initialHeight, 0)) {
 			cout << "La hauteur entree n'est pas positive. Veuillez recommencer.";
 		}
-	} while (!between_2_doubles(initialHeight, 0));
+	} while (!isBetween2Doubles(initialHeight, 0));
 
 	do {
 		cout << "\nEntrez le nombre de rebonds au bout duquel vous voulez savoir la hauteur de la balle: ";
 		cin >> nbBounces;
-		if (!between_2_doubles(nbBounces, 0)) {
+		if (!isBetween2Doubles(nbBounces, 0)) {
 			cout << "La nombre de rebonds entre n'est pas positif. Veuillez recommencer.";
 		}
-	} while (!between_2_doubles(nbBounces, 0));
+	} while (!isBetween2Doubles(nbBounces, 0));
 
 	do {
 		cout << "\nEntrez le coefficient de rebond de la balle: ";
 		cin >> bounceCoefficient;
-		if (!between_2_doubles(bounceCoefficient, 0, 1)) {
+		if (!isBetween2Doubles(bounceCoefficient, 0, 1)) {
 			cout << "Le coefficient de rebond entre n'est situe entre 0 et 1. Veuillez recommencer.";
 		}
-	} while (!between_2_doubles(bounceCoefficient, 0, 1));
+	} while (!isBetween2Doubles(bounceCoefficient, 0, 1));
 
 	for (bounceIterator = 1; bounceIterator <= nbBounces; bounceIterator++) {
 		if (bounceIterator == 1) {
