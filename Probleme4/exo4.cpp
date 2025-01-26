@@ -4,7 +4,8 @@
 using namespace std;
 
 int main() {
-    double lower_bound = -1; 
+
+    double lower_bound = -1;
     double upper_bound = 1;
     uniform_real_distribution<double> unif(lower_bound, upper_bound);
     default_random_engine re;
@@ -14,15 +15,17 @@ int main() {
     double x, y;
     double piEstime;
 
-    cout << 'Combien de points voulez vous generer';
+    cout << "Combien de points voulez vous generer";
     cin >> precision;
 
-    for (int = 0; i < precision; i++) {
+    for (int i = 0; i < precision; i++) {
         x = unif(re);
         y = unif(re);
         if (sqrt(pow(x, 2) + pow(y, 2)) < 1) nombrePointDansCercle++;
-    } 
-    piEstime = (static_cast<double>(nombrePointDansCercle) / precision) * 4; 
-    cout << 'La valeur de pi estimee est:' << piEstime << endl;
+    }
+    piEstime = (static_cast<double>(nombrePointDansCercle) / precision) * 4;
+    cout << "La valeur de pi estimee est : " << piEstime << endl;
 
-    return 0 
+    return 0;
+
+}
