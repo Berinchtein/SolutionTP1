@@ -6,7 +6,6 @@ using namespace std;
 
 int main() {
 
-	// Déclaration des variables
 	double initial_height;
 	double pre_bounce_height;
 	double post_bounce_height;
@@ -17,7 +16,6 @@ int main() {
 	int bounce_iterator;
 	const double g = 9.81;
 
-	// Entrée de la hauteur initiale de la balle et vérification de sa validité
 	do {
 		cout << "\nEntrez la hauteur initiale de la balle (m): ";
 		cin >> initial_height;
@@ -26,7 +24,6 @@ int main() {
 		}
 	} while (!between_2_doubles(initial_height, 0));
 
-	// Entrée du nombre de rebonds de la balle et vérification de sa validité
 	do {
 		cout << "\nEntrez le nombre de rebonds au bout duquel vous voulez savoir la hauteur de la balle: ";
 		cin >> nb_bounces;
@@ -35,7 +32,6 @@ int main() {
 		}
 	} while (!between_2_doubles(nb_bounces, 0));
 
-	// Entrée du coefficient de rebond et vérification de sa validité
 	do {
 		cout << "\nEntrez le coefficient de rebond de la balle: ";
 		cin >> bounce_coefficient;
@@ -44,7 +40,6 @@ int main() {
 		}
 	} while (!between_2_doubles(bounce_coefficient, 0, 1));
 
-	// Calcul des relations entre variables et affichage de la hauteur à chaque rebond
 	for (bounce_iterator = 1; bounce_iterator <= nb_bounces; bounce_iterator++) {
 		if (bounce_iterator == 1) {
 			pre_bounce_height = initial_height;

@@ -5,22 +5,18 @@ using namespace std;
 
 int main() {
 
-	// Déclaration et initialisation des variables
 	const int array_length = 10;
 	int initial_array[array_length] = { 7, 4, 7, 8, 4, 6, 3, 9, 6, 11 };
 	int arranged_array[array_length] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 	int iterator_1 = 0;
 	int iterator_2 = 0;
 
-
-	//Affichage du tableau initial
 	cout << "Tableau initial: {";
 	for (iterator_1 = 0; iterator_1 < array_length - 1; iterator_1++) {
 		cout << " " << initial_array[iterator_1] << ",";
 	}
 	cout << " " << initial_array[array_length - 1] << " }" << endl;
 
-	//Arrangement du nouveau tableau
 	//Non-optimisé
 	for (iterator_1 = 0; iterator_1 < array_length; iterator_1++) {
 		if (initial_array[iterator_1] % 2 == 0) {
@@ -35,7 +31,6 @@ int main() {
 		}
 	}
 
-	//Affichage du nouveau tableau arrangé
 	cout << "Tableau arrange: {";
 	for (iterator_1 = 0; iterator_1 < array_length - 1; iterator_1++) {
 		cout << " " << arranged_array[iterator_1] << ",";
