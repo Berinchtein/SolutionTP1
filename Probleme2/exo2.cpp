@@ -7,40 +7,40 @@ using namespace std;
 int main() {
 
 	// Déclaration des variables
-	float loan_amount;
-	float monthly_payment;
-	float annual_rate;
-	float monthly_rate;
-	float total_interest_amount = 0;
-	float temp_interest_amount = 0;
+	double loan_amount;
+	double monthly_payment;
+	double annual_rate;
+	double monthly_rate;
+	double total_interest_amount = 0;
+	double temp_interest_amount = 0;
 	unsigned nb_months = 0;
 
 	// Entrée de la somme d'argent et vérification de sa validité
 	do {
 		cout << "\nEntrez la somme d'argent qui a ete pretee: ";
 		cin >> loan_amount;
-		if (!between_2_floats(loan_amount, 0)) {
+		if (!between_2_doubles(loan_amount, 0)) {
 			cout << "La somme d'argent entree n'est pas positive. Veuillez recommencer.";
 		}
-	} while (!between_2_floats(loan_amount, 0));
+	} while (!between_2_doubles(loan_amount, 0));
 
 	// Entrée du montant remboursé chaque mois et vérification de sa validité
 	do {
 		cout << "\nEntrez le montant rembourse chaque mois: ";
 		cin >> monthly_payment;
-		if (!between_2_floats(monthly_payment, 0)) {
+		if (!between_2_doubles(monthly_payment, 0)) {
 			cout << "Le montant rembourse chaque mois entre n'est pas positif. Veuillez recommencer.";
 		}
-	} while (!between_2_floats(monthly_payment, 0));
+	} while (!between_2_doubles(monthly_payment, 0));
 
 	// Entrée du taux d'intérêt annuel et vérification de sa validité
 	do {
 		cout << "\nEntrez le taux d'interet annuel: ";
 		cin >> annual_rate;
-		if (!between_2_floats(annual_rate, 0, 100)) {
+		if (!between_2_doubles(annual_rate, 0, 100)) {
 			cout << "Le taux d'interet annuel entre n'est situe entre 0 et 100 %. Veuillez recommencer.";
 		}
-	} while (!between_2_floats(annual_rate, 0, 100));
+	} while (!between_2_doubles(annual_rate, 0, 100));
 
 	// Calcul du nombre de mois requis pour payer le prêt et du montant amassé par le prêteur
 	monthly_rate = annual_rate / 12;
