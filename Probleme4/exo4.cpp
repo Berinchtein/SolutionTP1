@@ -6,32 +6,41 @@
 
 #include <iostream>
 #include <random>
-#include <cmath>
 
 using namespace std;
 
 int main() {
 
-	double lower_bound = -1;
-	double upper_bound = 1;
-	uniform_real_distribution<double> unif(lower_bound, upper_bound);
-	default_random_engine re;
+	const double realPi = 3.141593;
+	const unsigned numberOfDecimals = 6;
 
-	int precision;
-	int numberOfPoints = 0;
-	double x, y;
-	double piEstimated;
+	double lowerCircleBound = -1.0;
+	double upperCircleBound = 1.0;
+	double x;
+	double y;
+	double estimatedPi;
+	double doubleRoundMultiplier = pow(10.0, numberOfDecimals);
+	double numberOfTotalPoints = 0;
+	double numberOfInterceptedPoints = 0;
+	time_t randomEngineSeed = time(0);
+	default_random_engine random(randomEngineSeed);
+	uniform_real_distribution<double> distribution(lowerCircleBound, upperCircleBound);
 
-	cout << "Combien de points voulez vous generer";
-	cin >> precision;
+	cout << "\nEntrez le nombre total de points a generer: ";
+	cin >> numberOfTotalPoints;
 
-	for (int i = 0; i < precision; i++) {
-		x = unif(re);
-		y = unif(re);
-		if (sqrt(pow(x, 2) + pow(y, 2)) < 1) numberOfPoints++;
+	for (int i = 0; i < numberOfTotalPoints; i++) {
+		x = distribution(random);
+		y = distribution(random);
+		if (sqrt(pow(x, 2) + pow(y, 2)) < 1.0) {
+			numberOfInterceptedPoints++;
+		}
 	}
-	piEstimated = (static_cast<double>(numberOfPoints) / precision) * 4;
-	cout << "La valeur de pi estimee est : " << piEstimated << endl;
+
+	estimatedPi = (numberOfInterceptedPoints / numberOfTotalPoints) * 4.0;
+	estimatedPi = (ceil(estimatedPi * doubleRoundMultiplier)) / doubleRoundMultiplier;
+	cout << "\nLa valeur de pi estimee est: " << estimatedPi << endl;
+	cout << "\nL'ecart entre cette valeur et la valeur reelle de pi (6 decimales) est: " << abs(estimatedPi - realPi)  << endl;
 
 	return 0;
 }

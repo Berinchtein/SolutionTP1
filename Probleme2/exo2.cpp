@@ -19,7 +19,7 @@ int main() {
 	double monthlyRate;
 	double totalInterestAmount = 0;
 	double tempInterestAmount = 0;
-	unsigned nbMonths = 0;
+	unsigned numberOfMonths = 0;
 
 	do {
 		cout << "\nEntrez la somme d'argent qui a ete pretee: ";
@@ -58,10 +58,10 @@ int main() {
 		else {
 			loanAmount = 0;
 		}
-		nbMonths++;
+		numberOfMonths++;
 	}
 
-	cout << "\nNombre de mois: " << nbMonths << endl;
+	cout << "\nNombre de mois: " << numberOfMonths << endl;
 	cout << "\nSomme percue par le preteur: " << totalInterestAmount << endl;
 
 	return 0;

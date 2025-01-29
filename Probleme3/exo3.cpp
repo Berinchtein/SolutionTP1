@@ -12,15 +12,18 @@ using namespace std;
 
 int main() {
 
+	const double g = 9.81;
+	const unsigned numberOfDecimals = 3;
+
 	double initialHeight;
 	double preBounceHeight;
 	double postBounceHeight;
 	double preBounceSpeed;
 	double postBounceSpeed;
-	double nbBounces;
 	double bounceCoefficient;
-	int bounceIterator;
-	const double g = 9.81;
+	double doubleRoundMultiplier = pow(10.0, numberOfDecimals);
+	unsigned numberOfBounces;
+
 
 	do {
 		cout << "\nEntrez la hauteur initiale de la balle (m): ";
@@ -32,11 +35,11 @@ int main() {
 
 	do {
 		cout << "\nEntrez le nombre de rebonds au bout duquel vous voulez savoir la hauteur de la balle: ";
-		cin >> nbBounces;
-		if (!isBetween2Doubles(nbBounces, 0)) {
+		cin >> numberOfBounces;
+		if (!isBetween2Doubles(numberOfBounces, 0)) {
 			cout << "La nombre de rebonds entre n'est pas positif. Veuillez recommencer.";
 		}
-	} while (!isBetween2Doubles(nbBounces, 0));
+	} while (!isBetween2Doubles(numberOfBounces, 0));
 
 	do {
 		cout << "\nEntrez le coefficient de rebond de la balle: ";
@@ -46,8 +49,8 @@ int main() {
 		}
 	} while (!isBetween2Doubles(bounceCoefficient, 0, 1));
 
-	for (bounceIterator = 1; bounceIterator <= nbBounces; bounceIterator++) {
-		if (bounceIterator == 1) {
+	for (int i = 1; i <= numberOfBounces; i++) {
+		if (i == 1) {
 			preBounceHeight = initialHeight;
 		}
 		else {
@@ -56,8 +59,8 @@ int main() {
 		preBounceSpeed = sqrt(2.0 * g * preBounceHeight);
 		postBounceSpeed = bounceCoefficient * preBounceSpeed;
 		postBounceHeight = (postBounceSpeed * postBounceSpeed) / (2.0 * g);
-		if (bounceIterator == nbBounces) {
-			cout << "\nHauteur de la balle apres le rebond #" << bounceIterator << ": " << (round(postBounceHeight * 10000.0)) / 10000.0 << " m" << endl;
+		if (i == numberOfBounces) {
+			cout << "\nHauteur de la balle apres le rebond #" << i << ": " << (ceil(postBounceHeight * doubleRoundMultiplier)) / doubleRoundMultiplier << " m" << endl;
 		}
 	}
 
