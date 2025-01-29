@@ -1,54 +1,64 @@
 /*
  * Nom: Exercice 6 TP1
- * Description: Exercice 6 du TP1, range dans un tableau de structures les informations d'un fichier ".txt".
+ * Description: Exercice 6 du TP1, range dans un tableau de structures les informations d'un fichier ".txt"
+				et affiche les détails du mot le plus grand. 
  * Auteurs: Manuel Jarry & Meryem El Kamouni
  */
 
+#include <fstream> 
 #include <iostream>
 #include <string> 
-#include <fstream> 
+#include <vector>
 
 using namespace std;
 
-struct Word {
-	string name, nature, definition;
-};
-
 int main() {
-	ifstream fichier("dictionnaire.txt");
-	if (!fichier.is_open()) {
+
+	ifstream inputFile("dictionnaire.txt");
+
+	if (inputFile.is_open()) {
+
+		struct Word {
+			string name, nature, definition;
+		};
+
+		int iterator_1 = 0;
+		size_t largestWordSize = 0;
+		size_t currentNameIndex;
+		size_t currentNatureIndex;
+		size_t largestWordIndex;
+		string line;
+		Word currentWord;
+		//Utilise un vecteur au lieu d'un tableau pour éviter l'utilisation du nombre de mots connu
+		vector<Word> words = {};
+
+		while (getline(inputFile, line)) {
+
+			currentNameIndex = line.find('\t');
+			currentNatureIndex = line.find('\t', currentNameIndex + 1);
+
+			currentWord.name = line.substr(0, currentNameIndex);
+			currentWord.nature = line.substr(currentNameIndex + 1, currentNatureIndex - currentNameIndex - 1);
+			currentWord.definition = line.substr(currentNatureIndex + 1);
+
+			words.push_back(currentWord);
+
+			if (currentWord.name.size() > largestWordSize) {
+				largestWordSize = currentWord.name.size();
+				largestWordIndex = iterator_1;
+			}
+
+			iterator_1++;
+		}
+
+		cout << "Mot le plus long du dictionnaire:" << endl;
+		cout << words.at(largestWordIndex).name << " (" << words.at(largestWordIndex).nature << ") : " << words.at(largestWordIndex).definition << endl;
+	}
+	else {
+
 		cerr << "Erreur: Impossible d'ouvrir le fichier dictionnaire.txt" << endl;
 		return 1;
 	}
-	int largestNumberOfCar = 0, largestIndex = 0;
-	Word words[4];
-	string line;
-	int i = 0;
 
-	while (getline(fichier, line)) {
-		size_t posName = line.find('\t');
-		size_t posNature = line.find('\t', posName + 1);
-
-		words[i].name = line.substr(0, posName);
-		words[i].nature = line.substr(posName + 1, posNature - posName - 1);
-		words[i].definition = line.substr(posNature + 1);
-		i++;
-		;
-		for (int j = 0; j < i; j++) {
-
-			if (words[j].name.size() > largestNumberOfCar) {
-				largestNumberOfCar = words[j].name.size();
-				largestIndex = j;
-			}
-		}
-		int firstSplit = words[largestIndex].nature.find(' ');
-		int secondSplit = words[largestIndex].nature.find(' ', firstSplit + 1);
-
-		cout << words[largestIndex].name << ' ('
-			<< words[largestIndex].nature.substr(0, secondSplit) << '/'
-			<< words[largestIndex].nature.substr(secondSplit + 1) << ') : '
-			<< words[largestIndex].definition;
-		return 0;
-	}
+	return 0;
 }
-

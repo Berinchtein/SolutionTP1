@@ -40,7 +40,7 @@ int main() {
 	estimatedPi = (numberOfInterceptedPoints / numberOfTotalPoints) * 4.0;
 	estimatedPi = (ceil(estimatedPi * doubleRoundMultiplier)) / doubleRoundMultiplier;
 	cout << "\nLa valeur de pi estimee est: " << estimatedPi << endl;
-	cout << "\nL'ecart entre cette valeur et la valeur reelle de pi (6 decimales) est: " << abs(estimatedPi - realPi)  << endl;
+	cout << "\nL'ecart entre cette valeur et la valeur reelle de pi (6 decimales) est: " << abs(estimatedPi - realPi) << endl;
 
 	return 0;
 }
