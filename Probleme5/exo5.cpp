@@ -11,7 +11,7 @@ using namespace std;
 
 int main() {
 
-	const unsigned arrayLength = 10;
+	const int arrayLength = 10;
 
 	int initialArray[arrayLength] = { 7, 4, 7, 8, 4, 6, 3, 9, 6, 11 };
 	int arrangedArray[arrayLength] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };

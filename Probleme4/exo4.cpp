@@ -12,16 +12,17 @@ using namespace std;
 int main() {
 
 	const double realPi = 3.141593;
-	const unsigned numberOfDecimals = 6;
+	const int numberOfDecimals = 6;
 
 	double lowerCircleBound = -1.0;
 	double upperCircleBound = 1.0;
 	double x;
 	double y;
 	double estimatedPi;
-	double doubleRoundMultiplier = pow(10.0, numberOfDecimals);
+	double relativeDeviation;
 	double numberOfTotalPoints = 0;
 	double numberOfInterceptedPoints = 0;
+	double doubleRoundingMultiplier = pow(10.0, numberOfDecimals);
 	time_t randomEngineSeed = time(0);
 	default_random_engine random(randomEngineSeed);
 	uniform_real_distribution<double> distribution(lowerCircleBound, upperCircleBound);
@@ -38,9 +39,11 @@ int main() {
 	}
 
 	estimatedPi = (numberOfInterceptedPoints / numberOfTotalPoints) * 4.0;
-	estimatedPi = (ceil(estimatedPi * doubleRoundMultiplier)) / doubleRoundMultiplier;
+	relativeDeviation = ((abs(estimatedPi - realPi)) / realPi) * 100.0;
+	relativeDeviation = (ceil(relativeDeviation * doubleRoundingMultiplier)) / doubleRoundingMultiplier;
+
 	cout << "\nLa valeur de pi estimee est: " << estimatedPi << endl;
-	cout << "\nL'ecart entre cette valeur et la valeur reelle de pi (6 decimales) est: " << abs(estimatedPi - realPi) << endl;
+	cout << "\nL'ecart relatif entre cette valeur et la valeur reelle de pi (6 decimales) est de " << relativeDeviation << "%" << endl;
 
 	return 0;
 }

@@ -21,9 +21,8 @@ int main() {
 	double preBounceSpeed;
 	double postBounceSpeed;
 	double bounceCoefficient;
-	double doubleRoundMultiplier = pow(10.0, numberOfDecimals);
-	unsigned numberOfBounces;
-
+	double doubleRoundingMultiplier = pow(10.0, numberOfDecimals);
+	int numberOfBounces;
 
 	do {
 		cout << "\nEntrez la hauteur initiale de la balle (m): ";
@@ -60,7 +59,7 @@ int main() {
 		postBounceSpeed = bounceCoefficient * preBounceSpeed;
 		postBounceHeight = (postBounceSpeed * postBounceSpeed) / (2.0 * g);
 		if (i == numberOfBounces) {
-			cout << "\nHauteur de la balle apres le rebond #" << i << ": " << (ceil(postBounceHeight * doubleRoundMultiplier)) / doubleRoundMultiplier << " m" << endl;
+			cout << "\nHauteur de la balle apres le rebond #" << i << ": " << (ceil(postBounceHeight * doubleRoundingMultiplier)) / doubleRoundingMultiplier << " m" << endl;
 		}
 	}
 

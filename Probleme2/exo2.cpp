@@ -19,7 +19,7 @@ int main() {
 	double monthlyRate;
 	double totalInterestAmount = 0;
 	double tempInterestAmount = 0;
-	unsigned numberOfMonths = 0;
+	int numberOfMonths = 0;
 
 	do {
 		cout << "\nEntrez la somme d'argent qui a ete pretee: ";
