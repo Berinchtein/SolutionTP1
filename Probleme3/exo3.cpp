@@ -13,7 +13,7 @@ using namespace std;
 int main() {
 
 	const double g = 9.81;
-	const unsigned numberOfDecimals = 3;
+	const int numberOfDecimals = 3;
 
 	double initialHeight;
 	double preBounceHeight;
