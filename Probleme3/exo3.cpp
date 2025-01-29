@@ -1,7 +1,7 @@
 /*
- * Nom: À REMPLIR
- * Description: À REMPLIR
- * Auteurs: À REMPLIR
+ * Nom: Exercice 3 TP1
+ * Description: Exercice 3 du TP1, indique la hauteur d'une balle après un certain nombre de rebonds.
+ * Auteurs: Manuel Jarry & Meryem El Kamouni
  */
 
 #include "../Probleme2/functions.hpp"

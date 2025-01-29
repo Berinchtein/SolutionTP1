@@ -1,7 +1,8 @@
 /*
- * Nom: À REMPLIR
- * Description: À REMPLIR
- * Auteurs: À REMPLIR
+ * Nom: Exercice 5 TP1
+ * Description: Exercice 5 du TP1,  prend un certain tableau et affiche ce même tableau avec les éléments
+				pairs placés en premier et les éléments impairs placés en dernier.
+ * Auteurs: Manuel Jarry & Meryem El Kamouni
  */
 
 #include <iostream>

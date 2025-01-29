@@ -1,7 +1,7 @@
 /*
- * Nom: À REMPLIR
- * Description: À REMPLIR
- * Auteurs: À REMPLIR
+ * Nom: Exercice 6 TP1
+ * Description: Exercice 6 du TP1, range dans un tableau de structures les informations d'un fichier ".txt".
+ * Auteurs: Manuel Jarry & Meryem El Kamouni
  */
 
 #include <iostream>

@@ -1,7 +1,8 @@
 /*
- * Nom: À REMPLIR
- * Description: À REMPLIR
- * Auteurs: À REMPLIR
+ * Nom: Exercice 2 TP1
+ * Description: Exercice 2 du TP1, donne le nombre de mois requis pour payer un certain prêt ainsi que la somme
+ *				perçu par le prêteur du prêt.
+ * Auteurs: Manuel Jarry & Meryem El Kamouni
  */
 
 #include "functions.hpp"

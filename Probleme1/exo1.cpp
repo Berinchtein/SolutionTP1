@@ -1,7 +1,7 @@
 /*
- * Nom: À REMPLIR
- * Description: À REMPLIR
- * Auteurs: À REMPLIR
+ * Nom: Exercice 1 TP1
+ * Description: Exercice 1 du TP1, indique si un nombre entré par l'utilisateur est premier ou pas.
+ * Auteurs: Manuel Jarry & Meryem El Kamouni
  */
 
 #include <iostream>
